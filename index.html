@@ -24,10 +24,14 @@
     </header>
 
     <section class="hero" aria-label="Hero banner">
+        <picture>
+            <source srcset="images/pexels-photo-373912.webp" type="image/webp">
         <img src="images/pexels-photo-373912.webp" alt ="Overview of a city landscape"
              class="hero-image"
              width="1200"
-             height="600">
+             height="600"
+             fetchpriority="high">
+        </picture>
         <div class="hero-text">
             <h1>Welcome to MyShop</h1>
             <p>Find the best products at the lowest prices.</p>
@@ -40,10 +44,12 @@
 
         <div class="products" role="list">
             <div class="product-card">
-                <img src="images/pexels-photo-461428.webp" alt ="Top-down view of matcha tea setup on a wooden table, with a bowl of green matcha powder, a bamboo whisk, three cups of green tea, wooden spoons with powder, and bamboo mats."
+                <img src="images/pexels-photo-461428.webp" 
+                     alt = "White over-ear headphones on a pink background"
                      class="product-image"
                      width="400"
-                     height="300">
+                     height="300"
+                      loading="lazy">
                 <h3>Headphones</h3>
                <p class="product-description">High quality headphones with amazing sound.</p>
                     <p class="product-price">
@@ -56,7 +62,8 @@
                 <img src="images/pexels-photo-1334597.webp" alt =" Studio photo of a Tablet, With the home screen visible"
                      class="product-image"
                       width="400"
-                      height="300">
+                      height="300"
+                      loading="lazy">
                 <h3>Tablet</h3>
                 <p class="product-description">High quality tablet with long battery time.</p>
                     <p class="product-price">
@@ -69,7 +76,8 @@
                 <img src="images/pexels-photo.webp" alt=" Picture of a note book with a pencil on the side, and a laptop, and an iPhone"
                      class="product-image"
                      width="400"
-                     height="300">
+                     height="300"
+                     loading="lazy">
                 <h3>Laptop</h3>
                 <p class="product-description">High quality laptop.</p>
                     <p class="product-price">
