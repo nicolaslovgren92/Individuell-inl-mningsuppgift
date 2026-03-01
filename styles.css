@@ -132,8 +132,9 @@ input:focus {
 .add-to-cart {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #dddddd;
-    color: #777777;
+    background-color: #555555; 
+    color: #ffffff; 
+    border: none; 
     border-radius: 4px;
     cursor: pointer;
     font-size: 13px;
