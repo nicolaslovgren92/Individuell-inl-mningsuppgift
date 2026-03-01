@@ -154,20 +154,7 @@
         onCLS(logVital);
         onFCP(logVital);
         onTTFB(logVital);
-    </script>
-
-    <script type="module">
-        import { onLCP, onFID, onCLS, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js?module';
-
-        function logVital(metric) {
-            console.log(`${metric.name}: ${Math.round(metric.value)} ms`);
-        }
-
-        onLCP(logVital);
-        onFID(logVital);
-        onCLS(logVital);
-        onFCP(logVital);
-        onTTFB(logVital);
+    
     </script>
 
 </body>
