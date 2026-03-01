@@ -37,6 +37,14 @@ body {
     font-size: 14px;
 }
 
+.menu-item a:focus,
+.primary-button:focus,
+.add-to-cart:focus,
+input:focus {
+    outline: 2px solid #333333;
+    outline-offset: 2px;
+}
+
 .hero {
     position: relative;
     width: 100%;
