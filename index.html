@@ -107,6 +107,51 @@
         <p>© 2025 MyShop. All rights reserved.</p>
        
     </footer>
+     <!-- axe-core for accessibility testing (Del 4) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.9.1/axe.min.js"></script>
+    <script>
+        axe.run(document, {
+            runOnly: ['wcag2a', 'wcag2aa']
+        }).then(function (results) {
+            console.group('%c axe Accessibility Results', 'color: white; background: #333; padding: 4px 8px; border-radius:4px;');
+
+            if (results.violations.length === 0) {
+                console.log('%c No violations found!', 'color: green; font-weight: bold;');
+            } else {
+                console.warn(`Found ${results.violations.length} violation(s):`);
+                results.violations.forEach(function (violation, i) {
+                    console.group(`${i + 1}. [${violation.impact.toUpperCase()}] ${violation.id} - ${violation.description}`);
+                    console.log('Help:', violation.helpUrl);
+                    violation.nodes.forEach(function (node) {
+                        console.log('Element:', node.target.join(', '));
+                        console.log('Fix:', node.failureSummary);
+                    });
+                    console.groupEnd();
+                });
+            }
+
+            console.log(`\nPasses: ${results.passes.length}`);
+            console.log(`Incomplete (needs review): ${results.incomplete.length}`);
+            console.groupEnd();
+        }).catch(function (err) {
+            console.error('axe error:', err);
+        });
+    </script>
+
+    <!-- Web Vitals (Del 5) -->
+    <script type="module">
+        import { onLCP, onFID, onCLS, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js?module';
+
+        function logVital(metric) {
+            console.log(`${metric.name}: ${Math.round(metric.value)} ms`);
+        }
+
+        onLCP(logVital);
+        onFID(logVital);
+        onCLS(logVital);
+        onFCP(logVital);
+        onTTFB(logVital);
+    </script>
 
     <script type="module">
         import { onLCP, onFID, onCLS, onFCP, onTTFB } from 'https://unpkg.com/web-vitals@3/dist/web-vitals.attribution.js?module';
